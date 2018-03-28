@@ -25,7 +25,16 @@ if choice == 1:
         #if degrees_cel < -274:
  #           print ("Invalid temperature, below Absolute Zero")
 elif choice == 2:
-        print (FtoC (int(input('Enter your temperature in Fahrenheit: '))))
-
+        degrees_fah = int(input('Enter your temperature in Fahrenheit: '))
+        while degrees_fah < -460:
+            print (FtoC (int(input("Invalid temperature, below Absolute Zero. Enter new temperature in Fahrenheight greater than -460: "))))
+            break
+        else:
+            print (FtoC (degrees_fah))
 else:
     print (int(input('Enter 1 for Celsius to Fahrenheit. Enter 2 for Fahrenheit to Celsius')))
+
+#repeat = (input("Would you like to do another conversion? Enter 1 for YES. Enter 2 for NO."))
+#while repeat == 1:
+#    print (choice)
+#    quit()
