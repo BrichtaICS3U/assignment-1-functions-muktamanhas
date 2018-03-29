@@ -13,28 +13,33 @@ def FtoC (F):
     C = (0.55556) * (F-32)
     return round(C)
 
+def main():
 
-choice = int(input('Enter 1 for Celsius to Fahrenheit. Enter 2 for Fahrenheit to Celsius'))
-if choice == 1:
-        degrees_cel = (int(input('Enter your temperature in Celsius: ')))
+    choice = int(input('Enter 1 for Celsius to Fahrenheit. Enter 2 for Fahrenheit to Celsius'))
+
+    if choice == 1:
+        degrees_cel = int(input('Enter your temperature in Celsius: '))
         while degrees_cel < -274:
-            print (CtoF (int(input("Invalid temperature, below Absolute Zero. Enter new temperature in Celsius greater than -274: "))))
-            break
-        else:
-            print (CtoF (degrees_cel))
-        #if degrees_cel < -274:
- #           print ("Invalid temperature, below Absolute Zero")
-elif choice == 2:
+                degrees_cel = (int(input("Invalid temperature, below Absolute Zero. Enter new temperature in Celsius greater than -274: ")))
+        print (CtoF (degrees_cel))
+            #if degrees_cel < -274:
+     #           print ("Invalid temperature, below Absolute Zero")
+
+    elif choice == 2:
         degrees_fah = int(input('Enter your temperature in Fahrenheit: '))
         while degrees_fah < -460:
-            print (FtoC (int(input("Invalid temperature, below Absolute Zero. Enter new temperature in Fahrenheight greater than -460: "))))
-            break
-        else:
-            print (FtoC (degrees_fah))
-else:
-    print (int(input('Enter 1 for Celsius to Fahrenheit. Enter 2 for Fahrenheit to Celsius')))
+            degrees_fah = (int(input("Invalid temperature, below Absolute Zero. Enter new temperature in Fahrenheiht greater than -460: ")))
+        print (FtoC (degrees_fah))
 
-#repeat = (input("Would you like to do another conversion? Enter 1 for YES. Enter 2 for NO."))
-#while repeat == 1:
-#    print (choice)
-#    quit()
+    else:
+        main()
+
+    restart = (input("Would you like to do another conversion?"))
+    restart = restart.upper()
+    if restart == "YES":
+        main()
+    else:
+        quit()
+
+print (main())
+
